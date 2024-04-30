@@ -1,6 +1,8 @@
+import sys
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
 
+outputnum=sys.argv[1]
 triangles = []
 with open("output.txt", "r") as f:
     for line in f:
@@ -15,5 +17,6 @@ for triangle in triangles:
 
 ax.autoscale()
 ax.axis("off")
-plt.savefig("./outfolder/output.png", bbox_inches="tight", pad_inches=0)
+outputpath= "./outfolder/output"+outputnum+".png"
+plt.savefig(outputpath, bbox_inches="tight", pad_inches=0)
 plt.close()
